@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<title>Simple JavaScript pagination</title>
+<meta charset="UTF-8">
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+    var header = document.createElement("h1");
+    header.innerHTML = "random number";
+    document.body.append(header);
+    var butn = document.createElement("button");
+    butn.setAttribute("onclick", "getRandom()")
+    butn.setAttribute('class', "btn btn-primary-align");
+    butn.innerHTML = "Click here";
+    var result = document.createElement("div");
+    result.setAttribute('div', "btn btn-primary-align");
+    document.body.append(butn);
+    document.body.append(result);
+        function getRandom()
+        {
+            var min = 10000000;
+            var max = 99999999;
+            var num = Math.floor(Math.random() * (max-min));
+             result.innerText = num;
+           //document.getElementById('demo').innerHTML = num;  
+        }
+        //document.getElementById('demo').innerHTML = num;     
+    </script>
+</body>
+</html>
