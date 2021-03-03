@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<title>Simple JavaScript pagination</title>
+<meta charset="UTF-8">
+</head>
+<body>
+    <input type="date" id="demo">
+    <br>
+    days : <p id="day"></p>year:<p id="year"></p>Month:<p id="month"></p>
+    Minutes:<p id="minutes"></p>Seconds:<p id="seconds"></p>millis:<p id="millis"></p>
+    <button onclick="myFunction()">Try it</button>
+    <script>
+
+    function myFunction() {
+
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var dob = document.getElementById("demo").value;
+        var dob1 = new Date(dob);
+        var d = new Date();
+        var t= d.getTime();
+        var time_difference = d.getTime() - dob1.getTime();  // milliseconds
+        var sec = Math.round(time_difference / 1000);        // seconds
+        var min = Math.round(sec / 60);                      // minutes
+        var daysbet = Math.round(time_difference / (1000 * 60 *60 * 24));
+        var y = Math.round(daysbet / 365);                   // year
+        var mon = Math.round(y * 12);                        // months
+        document.getElementById("day").innerHTML = daysbet;
+        document.getElementById("year").innerHTML = y;
+        document.getElementById("month").innerHTML = mon;
+        document.getElementById("minutes").innerHTML = min;
+        document.getElementById("seconds").innerHTML = sec;
+        document.getElementById("millis").innerHTML = time_difference;
+
+    }
+    
+    </script>
+</body>
+</html>
